@@ -62,8 +62,8 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 info.onLifeZero(function () {
-    game.gameOver(false)
     game.setGameOverMessage(false, "PERDISTE")
+    game.gameOver(false)
 })
 info.onScore(8, function () {
     scene.setBackgroundImage(assets.image`miImagen5`)
@@ -73,7 +73,7 @@ info.onScore(8, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
-    sprites.destroy(projectile)
+    sprites.destroy(sprite)
 })
 let projectile: Sprite = null
 let Angulo = 0
