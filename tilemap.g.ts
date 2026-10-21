@@ -14,6 +14,30 @@ namespace myTiles {
     export const tile5 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile6 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile9 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile10 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile11 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile12 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile13 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile7 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile8 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile14 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile15 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile16 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile17 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile18 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
@@ -50,6 +74,39 @@ namespace myTiles {
 2..........2..........2......2
 222222222222222222222222222222
 `, [myTiles.transparency16,myTiles.tile1,sprites.castle.tileGrass2,sprites.dungeon.floorLight2,sprites.swamp.swampTile9,sprites.castle.tilePath5,sprites.castle.tileGrass3,sprites.dungeon.floorLight0,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6], TileScale.Sixteen);
+            case "nivel":
+            case "nivel2":return tiles.createTilemap(hex`1e001e0001010101010101010101010101010101010101010101010101010101010101020702070207020207020202020202020207020702070207020202020101020202020202020202020202020202020202020202020202020202020101020202010101010202010101010202020102020101010101010102020101020202020303010202020303010202020102020203030103030202020101020202020202010202020202010202020102020202020102020202020101020202020202010202020202010202020102020202020102020202020101020202040605010202040605010202020102020406050104060502020101010101010101010101010101010202020101010101010101010101010101030302020202010202020303010202020103030202020103030202020101020202040605010406050202010202020102020202020102020202020101020202020202010202020202010202020102020406050104060502020101020201010101010101010202010202020102020101010101010102020101020202020202020202020202020202020202020702070207020702020101020802080208020802020202020202020202020202020202020202020101010101010101010101010101010202020101010101010101010101010101030302020202010202030303010202020109090a0a0b0b0c0c02020201010202020406050104060502020102020202020202020202020202020201010202020202020102020202020102020201010101010101010101010101010202010101010101010102020102020201030302020201030302020201010202020202020202020202020202020201020202020201020202020201010208020802080208020202020202020201020204060501040605020201010101010101010101010101010102020201020201010101010101020201010303020202020102020203030102020202020207020702070207020201010202020202020102020202020102020202020202020202020202020201010202020406050104060502020102020201020201010101010101020201010202010101010101010102020102020201020202030301030302020201010202020202020202020202020202020201020202020201020202020201010208020802080208020202020202020201020204060501040605020201010101010101010101010101010101010101010101010101010101010101`, img`
+222222222222222222222222222222
+2............................2
+2............................2
+2...2222..2222...2..2222222..2
+2....222...222...2...22222...2
+2......2.....2...2.....2.....2
+2......2.....2...2.....2.....2
+2....2.2...2.2...2...2.2.2...2
+22222222222222...2222222222222
+222....2...222...222...222...2
+2....2.2.2...2...2.....2.....2
+2......2.....2...2...2.2.2...2
+2..22222222..2...2..2222222..2
+2............................2
+2............................2
+22222222222222...2222222222222
+222....2..2222...2...........2
+2....2.2.2...2...............2
+2......2.....2...2222222222222
+2..22222222..2...222...222...2
+2................2.....2.....2
+2................2...2.2.2...2
+22222222222222...2..2222222..2
+222....2...222...............2
+2......2.....2...............2
+2....2.2.2...2...2..2222222..2
+2..22222222..2...2...22222...2
+2................2.....2.....2
+2................2...2.2.2...2
+222222222222222222222222222222
+`, [myTiles.transparency16,sprites.dungeon.floorLight0,sprites.swamp.swampTile16,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12,myTiles.tile7,myTiles.tile8,myTiles.tile14,myTiles.tile15,myTiles.tile16,myTiles.tile17], TileScale.Sixteen);
         }
         return null;
     })
@@ -69,6 +126,30 @@ namespace myTiles {
             case "tile5":return tile5;
             case "miMosaico4":
             case "tile6":return tile6;
+            case "miMosaico7":
+            case "tile9":return tile9;
+            case "miMosaico8":
+            case "tile10":return tile10;
+            case "miMosaico9":
+            case "tile11":return tile11;
+            case "miMosaico10":
+            case "tile12":return tile12;
+            case "miMosaico11":
+            case "tile13":return tile13;
+            case "miMosaico5":
+            case "tile7":return tile7;
+            case "miMosaico6":
+            case "tile8":return tile8;
+            case "miMosaico12":
+            case "tile14":return tile14;
+            case "miMosaico13":
+            case "tile15":return tile15;
+            case "miMosaico14":
+            case "tile16":return tile16;
+            case "miMosaico15":
+            case "tile17":return tile17;
+            case "miMosaico16":
+            case "tile18":return tile18;
         }
         return null;
     })
