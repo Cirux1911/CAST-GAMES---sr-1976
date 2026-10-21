@@ -1,3 +1,9 @@
+info.onScore(4, function () {
+    scene.setBackgroundImage(assets.image`miImagen5`)
+    game.showLongText("Aldo logró rescatar a 4 personas... Pero sabía que habían más gente secuestrada en el edificio. Así que subió las escaleras al siguiente piso.", DialogLayout.Bottom)
+    pause(2000)
+    tiles.setCurrentTilemap(tilemap`nivel`)
+})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Aldo,
@@ -15,30 +21,26 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    Angulo = randint(0, 360)
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f 6 6 6 6 f . . . . . 
+        . . . . . f 6 b b 6 f . . . . . 
+        . . . . . f 6 b b 6 f . . . . . 
+        . . . . . f 6 6 6 6 f . . . . . 
+        . . . . . f f f f f f . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Aldo, randint(-100, 100), randint(-100, 100))
+        `, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
     pause(500)
-})
-info.onScore(10, function () {
-    game.gameOver(true)
-    game.setGameOverEffect(true, effects.confetti)
-    game.setGameOverMessage(true, "¡GANASTE!")
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -63,11 +65,18 @@ info.onLifeZero(function () {
     game.gameOver(false)
     game.setGameOverMessage(false, "PERDISTE")
 })
+info.onScore(8, function () {
+    scene.setBackgroundImage(assets.image`miImagen5`)
+    game.showLongText("", DialogLayout.Bottom)
+    pause(2000)
+    tiles.setCurrentTilemap(tilemap`nivel3`)
+})
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
     sprites.destroy(projectile)
 })
 let projectile: Sprite = null
+let Angulo = 0
 let Aldo: Sprite = null
 scene.setBackgroundImage(assets.image`miImagen2`)
 game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es erradicar a todos los criminales y rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
