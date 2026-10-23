@@ -69,7 +69,7 @@ info.onScore(8, function () {
     scene.setBackgroundImage(assets.image`miImagen5`)
     game.showLongText("", DialogLayout.Bottom)
     pause(2000)
-    tiles.setCurrentTilemap(tilemap`nivel3`)
+    tiles.setCurrentTilemap(tilemap`nivel0`)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
