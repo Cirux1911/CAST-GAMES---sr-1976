@@ -22,24 +22,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     Angulo = randint(0, 360)
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . f f f f f f . . . . . 
-        . . . . . f 6 6 6 6 f . . . . . 
-        . . . . . f 6 b b 6 f . . . . . 
-        . . . . . f 6 b b 6 f . . . . . 
-        . . . . . f 6 6 6 6 f . . . . . 
-        . . . . . f f f f f f . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
+    projectile = sprites.createProjectileFromSprite(assets.image`Bala`, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
     pause(500)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -87,3 +70,4 @@ scene.cameraFollowSprite(Aldo)
 tiles.setCurrentTilemap(tilemap`nivel1`)
 info.setLife(5)
 info.setScore(0)
+let secuestrado = 0
