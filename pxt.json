@@ -2,7 +2,8 @@
     "name": "CAST GAMES - S.R. 1976 - Copia - Copia - Copia",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2"
     },
     "files": [
         "main.blocks",

@@ -1,8 +1,20 @@
+namespace SpriteKind {
+    export const Secuestrado = SpriteKind.create()
+    export const Rescatado = SpriteKind.create()
+}
+function crearSecuestradoIzq (columna: number, fila: number) {
+    persona = sprites.create(assets.image`Secuestrado Izquierda`, SpriteKind.Secuestrado)
+    tiles.placeOnTile(persona, tiles.getTileLocation(columna, fila))
+}
+function crearSecuestradoDer (Columna: number, Fila: number) {
+    persona = sprites.create(assets.image`Secuestrado derecha`, SpriteKind.Secuestrado)
+    tiles.placeOnTile(persona, tiles.getTileLocation(Columna, Fila))
+}
 info.onScore(4, function () {
     scene.setBackgroundImage(assets.image`miImagen5`)
     game.showLongText("Aldo logró rescatar a 4 personas... Pero sabía que habían más gente secuestrada en el edificio. Así que subió las escaleras al siguiente piso.", DialogLayout.Bottom)
     pause(2000)
-    tiles.setCurrentTilemap(tilemap`nivel`)
+    tiles.setCurrentTilemap(tilemap`NIVEL 2`)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -48,11 +60,18 @@ info.onLifeZero(function () {
     game.setGameOverMessage(false, "PERDISTE")
     game.gameOver(false)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Secuestrado, function (jugador, cautivo) {
+    cautivo.setKind(SpriteKind.Food)
+    cautivo.setImage(assets.image`Secuestrado Rescatado`)
+    info.changeScoreBy(1)
+    pause(5000)
+    sprites.destroy(cautivo)
+})
 info.onScore(8, function () {
     scene.setBackgroundImage(assets.image`miImagen5`)
     game.showLongText("", DialogLayout.Bottom)
     pause(2000)
-    tiles.setCurrentTilemap(tilemap`nivel0`)
+    tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
@@ -60,6 +79,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 let projectile: Sprite = null
 let Angulo = 0
+let persona: Sprite = null
 let Aldo: Sprite = null
 scene.setBackgroundImage(assets.image`miImagen2`)
 game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es erradicar a todos los criminales y rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
@@ -68,6 +88,14 @@ Aldo = sprites.create(assets.image`miImagen`, SpriteKind.Player)
 controller.moveSprite(Aldo)
 scene.cameraFollowSprite(Aldo)
 tiles.setCurrentTilemap(tilemap`nivel1`)
+crearSecuestradoIzq(26, 27)
+crearSecuestradoIzq(23, 13)
+crearSecuestradoDer(5, 28)
+crearSecuestradoDer(2, 7)
+Aldo.setImage(assets.image`miImagen3`)
 info.setLife(5)
 info.setScore(0)
 let secuestrado = 0
+let militar = sprites.create(assets.image`miImagen12`, SpriteKind.Enemy)
+tiles.placeOnTile(militar, tiles.getTileLocation(19, 25))
+militar.follow(Aldo, 50)
