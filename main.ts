@@ -45,9 +45,11 @@ function Militar2 (columna: number, fila: number) {
     militar.follow(Aldo, 50)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    Angulo = randint(0, 360)
-    projectile = sprites.createProjectileFromSprite(assets.image`Bala`, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
-    pause(500)
+    if (recarga == 0) {
+        recarga = 10
+        Angulo = randint(0, 360)
+        projectile = sprites.createProjectileFromSprite(assets.image`Bala`, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
+    }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -58,7 +60,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    protección = 1
     info.changeLifeBy(-1)
+    pause(1500)
+    protección = 0
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -93,6 +98,8 @@ let projectile: Sprite = null
 let Angulo = 0
 let militar: Sprite = null
 let persona: Sprite = null
+let protección = 0
+let recarga = 0
 let Aldo: Sprite = null
 scene.setBackgroundImage(assets.image`miImagen2`)
 game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
@@ -109,8 +116,15 @@ crearSecuestradoDer(2, 7)
 Aldo.setImage(assets.image`miImagen3`)
 info.setLife(5)
 info.setScore(0)
-let secuestrado = 0
 Militar2(15, 17)
 Militar2(2, 19)
 Militar2(20, 17)
 Militar2(5, 17)
+recarga = 0
+protección = 0
+let secuestrado = 0
+game.onUpdateInterval(50, function () {
+    if (recarga > 0) {
+        recarga += -1
+    }
+})
