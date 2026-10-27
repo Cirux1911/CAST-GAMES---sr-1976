@@ -15,6 +15,10 @@ info.onScore(4, function () {
     game.showLongText("Aldo logró rescatar a 4 personas... Pero sabía que habían más gente secuestrada en el edificio. Así que subió las escaleras al siguiente piso.", DialogLayout.Bottom)
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL 2`)
+    crearSecuestradoIzq(27, 17)
+    crearSecuestradoIzq(28, 24)
+    crearSecuestradoDer(2, 6)
+    crearSecuestradoDer(9, 21)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -32,6 +36,11 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+function Militar2 (columna: number, fila: number) {
+    militar = sprites.create(assets.image`miImagen12`, SpriteKind.Enemy)
+    tiles.placeOnTile(militar, tiles.getTileLocation(columna, fila))
+    militar.follow(Aldo, 50)
+}
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     Angulo = randint(0, 360)
     projectile = sprites.createProjectileFromSprite(assets.image`Bala`, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
@@ -63,13 +72,13 @@ info.onLifeZero(function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Secuestrado, function (jugador, cautivo) {
     cautivo.setKind(SpriteKind.Food)
     cautivo.setImage(assets.image`Secuestrado Rescatado`)
-    info.changeScoreBy(1)
     pause(5000)
     sprites.destroy(cautivo)
+    info.changeScoreBy(1)
 })
 info.onScore(8, function () {
     scene.setBackgroundImage(assets.image`miImagen5`)
-    game.showLongText("", DialogLayout.Bottom)
+    game.showLongText("Finalmente Aldo sube a la terraza, donde un helicópeto le sorprende", DialogLayout.Bottom)
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
 })
@@ -79,6 +88,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
 })
 let projectile: Sprite = null
 let Angulo = 0
+let militar: Sprite = null
 let persona: Sprite = null
 let Aldo: Sprite = null
 scene.setBackgroundImage(assets.image`miImagen2`)
@@ -96,6 +106,6 @@ Aldo.setImage(assets.image`miImagen3`)
 info.setLife(5)
 info.setScore(0)
 let secuestrado = 0
-let militar = sprites.create(assets.image`miImagen12`, SpriteKind.Enemy)
-tiles.placeOnTile(militar, tiles.getTileLocation(19, 25))
-militar.follow(Aldo, 50)
+Militar2(15, 17)
+Militar2(2, 19)
+Militar2(20, 17)
