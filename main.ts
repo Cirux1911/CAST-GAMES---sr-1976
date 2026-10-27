@@ -19,6 +19,9 @@ info.onScore(4, function () {
     crearSecuestradoIzq(28, 24)
     crearSecuestradoDer(2, 6)
     crearSecuestradoDer(9, 21)
+    Militar2(3, 5)
+    Militar2(15, 3)
+    Militar2(19, 24)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -92,12 +95,13 @@ let militar: Sprite = null
 let persona: Sprite = null
 let Aldo: Sprite = null
 scene.setBackgroundImage(assets.image`miImagen2`)
-game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es erradicar a todos los criminales y rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
+game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
 pause(5000)
 Aldo = sprites.create(assets.image`miImagen`, SpriteKind.Player)
 controller.moveSprite(Aldo)
 scene.cameraFollowSprite(Aldo)
 tiles.setCurrentTilemap(tilemap`nivel1`)
+tiles.placeOnTile(Aldo, tiles.getTileLocation(15, 28))
 crearSecuestradoIzq(26, 27)
 crearSecuestradoIzq(23, 13)
 crearSecuestradoDer(5, 28)
@@ -109,3 +113,4 @@ let secuestrado = 0
 Militar2(15, 17)
 Militar2(2, 19)
 Militar2(20, 17)
+Militar2(5, 17)
