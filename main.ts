@@ -1,6 +1,7 @@
 namespace SpriteKind {
     export const Secuestrado = SpriteKind.create()
     export const Rescatado = SpriteKind.create()
+    export const BOSS = SpriteKind.create()
 }
 let bala_de_jefe = 0
 sprites.onOverlap(SpriteKind.Player, bala_de_jefe, function (sprite, otherSprite) {
@@ -100,7 +101,7 @@ info.onScore(8, function () {
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
     tiles.placeOnTile(Aldo, tiles.getTileLocation(24, 6))
-    Jefe_final = sprites.create(assets.image`Secuestrado derecha0`, SpriteKind.Enemy)
+    Jefe_final = sprites.create(assets.image`JEFE FINAL`, SpriteKind.BOSS)
     vida_jefe_final = statusbars.create(40, 5, StatusBarKind.Health)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
