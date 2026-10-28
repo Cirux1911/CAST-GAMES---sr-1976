@@ -2,6 +2,10 @@ namespace SpriteKind {
     export const Secuestrado = SpriteKind.create()
     export const Rescatado = SpriteKind.create()
 }
+let bala_de_jefe = 0
+sprites.onOverlap(SpriteKind.Player, bala_de_jefe, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+})
 function crearSecuestradoIzq (columna: number, fila: number) {
     persona = sprites.create(assets.image`Secuestrado Izquierda`, SpriteKind.Secuestrado)
     tiles.placeOnTile(persona, tiles.getTileLocation(columna, fila))
@@ -59,6 +63,12 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    if (status == Jefe_final) {
+        sprites.destroy(Jefe_final)
+        game.setGameOverMessage(true, "GAME OVER!")
+    }
+})
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     protección = 1
     info.changeLifeBy(-1)
@@ -89,11 +99,15 @@ info.onScore(8, function () {
     game.showLongText("Finalmente Aldo sube a la terraza, donde un helicópeto le sorprende", DialogLayout.Bottom)
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
+    tiles.placeOnTile(Aldo, tiles.getTileLocation(24, 6))
+    Jefe_final = sprites.create(assets.image`Secuestrado derecha0`, SpriteKind.Enemy)
+    vida_jefe_final = statusbars.create(40, 5, StatusBarKind.Health)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite)
-    sprites.destroy(sprite)
+    vida_jefe_final.value += -10
 })
+let vida_jefe_final: StatusBarSprite = null
+let Jefe_final: Sprite = null
 let projectile: Sprite = null
 let Angulo = 0
 let militar: Sprite = null
@@ -126,5 +140,10 @@ let secuestrado = 0
 game.onUpdateInterval(50, function () {
     if (recarga > 0) {
         recarga += -1
+    }
+})
+game.onUpdateInterval(15, function () {
+    if (info.score() >= 8) {
+        Jefe_final.setVelocity(-150, 0)
     }
 })
