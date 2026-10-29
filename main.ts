@@ -105,7 +105,8 @@ info.onScore(8, function () {
     vida_jefe_final = statusbars.create(40, 5, StatusBarKind.Health)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
-    vida_jefe_final.value += -10
+    sprites.destroy(otherSprite)
+    sprites.destroy(sprite)
 })
 let vida_jefe_final: StatusBarSprite = null
 let Jefe_final: Sprite = null
