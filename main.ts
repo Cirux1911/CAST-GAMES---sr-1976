@@ -101,7 +101,7 @@ info.onScore(8, function () {
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
     tiles.placeOnTile(Aldo, tiles.getTileLocation(24, 6))
-    Jefe_final = sprites.create(assets.image`JEFE FINAL`, SpriteKind.BOSS)
+    Jefe_final = sprites.create(assets.image`miImagen4`, SpriteKind.BOSS)
     vida_jefe_final = statusbars.create(40, 5, StatusBarKind.Health)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
