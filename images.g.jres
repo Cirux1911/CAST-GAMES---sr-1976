@@ -44,6 +44,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "miImagen12"
     },
+    "image7": {
+        "data": "hwQQABAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "miImagen5"
+    },
+    "image16": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7g7gAA/yLv7u/uAPAvIv/u/v8A8CIiH+GOiP//IiL+746I/y8iIu7ujogPLyIi7u6OiA//IiL+746I//AiIh/hjoj/8C8i/+7+/wAALyLv7u/uAAAvIv/+4O4AAC8i/w8AAAAA//8PAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Secuestrado Rescatado"
+    },
     "image12": {
         "data": "hwQYABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAAvIv8AAAAAAAAAAAAvIu4PAAAAAAAAAPAvIu7+/w8AAAAAAPAiIu7uiA8AAAAAAP8iIu7uiA8AAAAAAP8iIu7uiP8AAAAA8P8iIv7viP8PAAAA8P8iIh7hiP8PAAAAAP8iIu7uiP8AAAAAAP8iIu7uiP8AAAAAAP8iIu7uiP8PAAAAAPAiIu7u//8PAAAAAPD/////Tv8PAAAAAAD////vTg4AAAAAAAAA8P8ATg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
         "mimeType": "image/x-mkcd-f4",
@@ -54,20 +64,10 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Secuestrado derecha"
     },
-    "image7": {
-        "data": "hwQQABAAAAD//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "miImagen5"
-    },
     "image6": {
         "data": "hwQSABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "JEFE FINAL"
-    },
-    "image16": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7g7gAA/yLv7u/uAPAvIv/u/v8A8CIiH+GOiP//IiL+746I/y8iIu7ujogPLyIi7u6OiA//IiL+746I//AiIh/hjoj/8C8i/+7+/wAALyLv7u/uAAAvIv/+4O4AAC8i/w8AAAAA//8PAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Secuestrado Rescatado"
     },
     "image15": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADw//8PAAAAAPBmZg8AAAAA8LZrDwAAAADwtmsPAAAAAPBmZg8AAAAA8P//DwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",

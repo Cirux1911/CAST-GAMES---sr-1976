@@ -302,6 +302,44 @@ fffffffff111111111111111111111111ffffffffffffff111111111111111111111ffffffffffff
 . . . . . f f f f f f . . . . . 
 . . . . . f f . . f f . . . . . 
 `;
+            case "image7":
+            case "miImagen5":return img`
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+f f f f f f f f f f f f f f f f 
+`;
+            case "image16":
+            case "Secuestrado Rescatado":return img`
+. . . . . . f f f f . . . . . . 
+. . . . f f f 2 2 f f f . . . . 
+. . . f f 2 2 2 2 2 2 f f f f f 
+. . f f 2 2 2 2 2 2 2 2 2 2 2 f 
+. . f 2 2 2 2 2 2 2 2 2 2 2 2 f 
+. . f 2 2 2 2 2 2 2 2 2 2 2 2 f 
+. . f f f f e e e e f f f f f f 
+. f f e f 1 f e e f 1 f e f f . 
+. f e e e 1 f e e f 1 e e e f . 
+. . f e e e e e e e e e e f . . 
+. . . f e e e e e e e e f . . . 
+. . e e f 8 8 8 8 8 8 f e e . . 
+. . e e f 8 8 8 8 8 8 f e e . . 
+. . e e f 8 8 8 8 8 8 f e e . . 
+. . . . . f f f f f f . . . . . 
+. . . . . f f . . f f . . . . . 
+`;
             case "image12":
             case "Secuestrado Izquierda":return img`
 ........................
@@ -356,25 +394,6 @@ fffffffff111111111111111111111111ffffffffffffff111111111111111111111ffffffffffff
 ........................
 ........................
 `;
-            case "image7":
-            case "miImagen5":return img`
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-f f f f f f f f f f f f f f f f 
-`;
             case "image6":
             case "JEFE FINAL":return img`
 ..................
@@ -395,25 +414,6 @@ f f f f f f f f f f f f f f f f
 ..................
 ..................
 ..................
-`;
-            case "image16":
-            case "Secuestrado Rescatado":return img`
-. . . . . . f f f f . . . . . . 
-. . . . f f f 2 2 f f f . . . . 
-. . . f f 2 2 2 2 2 2 f f f f f 
-. . f f 2 2 2 2 2 2 2 2 2 2 2 f 
-. . f 2 2 2 2 2 2 2 2 2 2 2 2 f 
-. . f 2 2 2 2 2 2 2 2 2 2 2 2 f 
-. . f f f f e e e e f f f f f f 
-. f f e f 1 f e e f 1 f e f f . 
-. f e e e 1 f e e f 1 e e e f . 
-. . f e e e e e e e e e e f . . 
-. . . f e e e e e e e e f . . . 
-. . e e f 8 8 8 8 8 8 f e e . . 
-. . e e f 8 8 8 8 8 8 f e e . . 
-. . e e f 8 8 8 8 8 8 f e e . . 
-. . . . . f f f f f f . . . . . 
-. . . . . f f . . f f . . . . . 
 `;
             case "image15":
             case "Bala":return img`
