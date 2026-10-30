@@ -4,22 +4,6 @@ namespace SpriteKind {
     export const BOSS = SpriteKind.create()
     export const BalaJefe = SpriteKind.create()
 }
-// Protege a Aldo durante 1,5 segundos después de un golpe
-function danarAldo () {
-    if (protección == 0) {
-        protección = 1
-        info.changeLifeBy(-1)
-        pause(1500)
-        protección = 0
-    }
-}
-sprites.onOverlap(SpriteKind.BOSS, SpriteKind.Player, function (sprite, otherSprite) {
-    danarAldo()
-})
-sprites.onOverlap(SpriteKind.BalaJefe, SpriteKind.Player, function (sprite, otherSprite) {
-    sprites.destroy(sprite)
-    danarAldo()
-})
 function crearSecuestradoIzq (columna: number, fila: number) {
     persona = sprites.create(assets.image`Secuestrado Izquierda`, SpriteKind.Secuestrado)
     tiles.placeOnTile(persona, tiles.getTileLocation(columna, fila))
@@ -68,6 +52,7 @@ function Militar2 (columna: number, fila: number) {
     militar.follow(Aldo, 50)
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    music.play(music.createSong(assets.song`Sonido de disparo`), music.PlaybackMode.UntilDone)
     if (recarga == 0) {
         recarga = 10
         Angulo = randint(0, 360)
@@ -90,6 +75,10 @@ statusbars.onZero(StatusBarKind.Health, function (status) {
         game.gameOver(true)
     }
 })
+sprites.onOverlap(SpriteKind.BalaJefe, SpriteKind.Player, function (sprite, otherSprite) {
+    sprites.destroy(sprite)
+    danarAldo()
+})
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     danarAldo()
 })
@@ -105,6 +94,15 @@ info.onLifeZero(function () {
     game.setGameOverMessage(false, "PERDISTE")
     game.gameOver(false)
 })
+// Protege a Aldo durante 1,5 segundos después de un golpe
+function danarAldo () {
+    if (protección == 0) {
+        protección = 1
+        info.changeLifeBy(-1)
+        pause(1500)
+        protección = 0
+    }
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Secuestrado, function (jugador, cautivo) {
     cautivo.setKind(SpriteKind.Food)
     cautivo.setImage(assets.image`Secuestrado Rescatado`)
@@ -131,10 +129,14 @@ info.onScore(8, function () {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
     sprites.destroy(sprite)
+    music.play(music.createSong(assets.song`SonidoDeMuerteEnemigo`), music.PlaybackMode.UntilDone)
 })
-let jefeActivo = 0
+sprites.onOverlap(SpriteKind.BOSS, SpriteKind.Player, function (sprite, otherSprite) {
+    danarAldo()
+})
 let bala_de_jefe: Sprite = null
 let Jefe_final: Sprite = null
+let jefeActivo = 0
 let projectile: Sprite = null
 let Angulo = 0
 let militar: Sprite = null
@@ -143,6 +145,7 @@ let persona: Sprite = null
 let protección = 0
 let recarga = 0
 let Aldo: Sprite = null
+let secuestrado = 0
 scene.setBackgroundImage(assets.image`miImagen2`)
 music.play(music.createSong(assets.song`Musica`), music.PlaybackMode.LoopingInBackground)
 game.showLongText("1976, San Rafael Mendoza. Aldo López Rodruigez descubre que la municipalidad es una organización secreta criminal. Cometían secuestros, torturas, asesinatos, corrupción, entre otras cosas. Su misión es rescatar a toda la gente que esté ahí. ", DialogLayout.Bottom)
@@ -165,22 +168,15 @@ Militar2(20, 17)
 Militar2(5, 17)
 recarga = 0
 protección = 0
-let secuestrado = 0
 game.onUpdateInterval(50, function () {
     if (recarga > 0) {
         recarga += -1
     }
 })
-
 game.onUpdateInterval(1500, function () {
     if (jefeActivo == 1 && Jefe_final != null) {
         // La bala apunta hacia donde estaba Aldo cuando se disparó
-        bala_de_jefe = sprites.createProjectileFromSprite(
-            assets.image`Bala`,
-            Jefe_final,
-            (Aldo.x - Jefe_final.x) / 2,
-            (Aldo.y - Jefe_final.y) / 2
-        )
+        bala_de_jefe = sprites.createProjectileFromSprite(assets.image`Bala`, Jefe_final, (Aldo.x - Jefe_final.x) / 2, (Aldo.y - Jefe_final.y) / 2)
         bala_de_jefe.setKind(SpriteKind.BalaJefe)
         bala_de_jefe.lifespan = 4000
     }

@@ -142,12 +142,6 @@
         "tilemapTile": true,
         "displayName": "miMosaico21"
     },
-    "tile24": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "miMosaico22"
-    },
     "nivel2": {
         "id": "nivel2",
         "mimeType": "application/mkcd-tilemap",
