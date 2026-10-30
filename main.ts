@@ -57,7 +57,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         Angulo = randint(0, 360)
         projectile = sprites.createProjectileFromSprite(assets.image`Bala`, Aldo, Math.cos(Angulo) * 100, Math.sin(Angulo) * 100)
     }
-    music.play(music.createSong(assets.song`Sonido de disparo`), music.PlaybackMode.UntilDone)
+    music.play(music.createSong(assets.song`Sonido de disparo`), music.PlaybackMode.InBackground)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
