@@ -1,103 +1,55 @@
-# SR 1976
+ 
 
-**Grupo:** CAST GAMES  
-**Herramienta:** MakeCode Arcade  
 
-## Descripción del juego
+> Abrir esta página en [https://cirux1911.github.io/CAST-GAMES---sr-1976/](https://cirux1911.github.io/CAST-GAMES---sr-1976/)
 
-**SR 1976** es un videojuego de acción en vista superior, inspirado en juegos como *Hotline Miami*. Está ambientado en una versión ficticia de San Rafael, Mendoza, durante 1976.
+## Usar como extensión
 
-El jugador controla a Aldo López Rodruigez, quien debe recorrer la municipalidad, rescatar personas secuestradas y enfrentarse a soldados enemigos y a un jefe final.
+Este repositorio se puede agregar como **extensión** en MakeCode.
 
-## Integrantes y roles
+* abrir [https://arcade.makecode.com/](https://arcade.makecode.com/)
+* haz clic en **Nuevo proyecto**
+* haz clic en **Extensiones** en el menú del engranaje
+* buscar **https://github.com/cirux1911/CAST-GAMES---sr-1976** e importar
 
-| Integrante | Responsabilidades |
-| --- | --- |
-| **Ciro** | Líder del grupo; lógica; documentación y pruebas. |
-| **Agus** | Arte y diseño de mapas. |
-| **Santi** | Arte y sonido: efectos sonoros. |
-| **Tomi** | Lógica; animaciones; documentación y pruebas. |
+## Editar este proyecto
 
-## Historia y ambientación
+Para editar este repositorio en MakeCode.
 
-En 1976, en San Rafael, Mendoza, Aldo López Rodruigez, un joven de pelo largo atado y lentes, descubre que, en la historia ficticia del juego, la municipalidad esconde una organización criminal involucrada en secuestros, torturas, asesinatos y corrupción.
+* abrir [https://arcade.makecode.com/](https://arcade.makecode.com/)
+* haz clic en **Importar** y luego haz clic en **Importar URL**
+* pega **https://github.com/cirux1911/CAST-GAMES---sr-1976** y haz clic en importar
 
-Su misión es rescatar a las personas retenidas y enfrentar a los responsables.
+#### Metadatos (se utilizan para buscar y renderizar)
 
-**Final:** tras rescatar a los ciudadanos, estos salen de la municipalidad, festejan y agradecen a Aldo.
-
-## Objetivo y mecánicas
-
-- Recorrer **tres niveles** que representan diferentes partes de la municipalidad.
-- **Rescatar secuestrados** acercándose a ellos; cada rescate aumenta el puntaje. La persona cambia brevemente de imagen y luego desaparece, simulando su escape.
-- **Enfrentar soldados** que persiguen al protagonista; los proyectiles de Aldo pueden eliminarlos.
-- **Conservar las vidas:** Aldo comienza con cinco y pierde una al recibir daño. Existe una protección temporal después de cada impacto.
-- **Avanzar de nivel:** al llegar a 4 rescates se pasa al nivel 2 y al llegar a 8 al nivel 3.
-- **Derrotar al jefe final:** tiene una barra de 10 puntos de vida, persigue a Aldo y puede dispararle. En la versión actual, derrotarlo activa la victoria; quedarse sin vidas provoca la derrota.
-
-## Controles
-
-| Control | Acción |
-| --- | --- |
-| Flechas de dirección | Mover a Aldo. |
-| Botón **B** del simulador | Disparar. |
-
-### Cómo jugar
-
-1. Abrir el juego (importando link del repositorio) y leer la introducción.
-   
-   <img width="815" height="360" alt="image" src="https://github.com/user-attachments/assets/0a15fba4-d7e7-42a1-9b00-f6027a11cfca" />
-   
-2. Recorrer el primer nivel, evitando a los soldados o eliminándolos con los disparos.
-3. Acercarse a los secuestrados para rescatarlos y sumar puntos.
-4. Continuar por los siguientes niveles al alcanzar los puntajes necesarios.
-5. En el nivel final, esquivar al jefe y sus balas y derrotarlo con diez impactos.
-
-## Personajes y elementos
-
-- **Aldo López Rodruigez:** protagonista; lleva el pelo largo atado y lentes.
-- **Secuestrados:** ciudadanos de distintas apariencias, con la boca tapada y las manos atadas.
-- **Militares:** enemigos con uniforme verde camuflado y gorra.
-- **El jefe:** villano principal, un hombre de traje y aspecto intimidante.
-
-## Diseño de niveles
-
-El juego tiene una vista desde arriba y mapas distintos para cada sector de la municipalidad. Los tres niveles fueron diseñados por el equipo. El tercero es el enfrentamiento final con el jefe.
-
-## Organización del trabajo y dificultades
-
-Durante el desarrollo aparecieron problemas de sincronización entre MakeCode Arcade y GitHub, conflictos al trabajar con ramas y commits y dificultades de conexión a Internet mediante el Wi-Fi del colegio.
-
-El equipo fue aprendiendo a utilizar el control de versiones, realizar copias de seguridad, revisar los cambios y resolver problemas de importación de recursos.
-
-## Declaración del uso de inteligencia artificial
-
-Se utilizó **ChatGPT**, incluido su acceso a GitHub, como ayuda para investigar y corregir problemas técnicos relacionados con MakeCode Arcade, sincronización, ramas, commits y algunos errores de lógica del juego.
-
-En algunas pruebas, las propuestas de código resultaron demasiado extensas y difíciles de comprender o modificar, por lo que el grupo priorizó soluciones sencillas, revisadas y probadas en el proyecto.
-
-**El diseño de los niveles, los mapas, los personajes y los gráficos fue realizado por el grupo.** La asistencia técnica de IA se declara aquí para documentar su uso.
-
-## Créditos y recursos de terceros
-
-- **Música utilizada:** Sonidos y musica gratuitos de Makecode Arcade
-- **Gráficos, mapas y diseño de niveles:** CAST GAMES.
-
-## Documento de planificación
-
-**Enlace al documento de Word compartido:** https://colegiodelcarmenedu-my.sharepoint.com/:w:/g/personal/nicolas_martinez_delcarmen_edu_ar/IQB8RPDzr5gETawqKOk0jpoJAbMFAGrrGXEW2GmaePi2xRU?e=r1H0z7 
-
-## Abrir y editar el proyecto
-
-1. Entrar a [MakeCode Arcade](https://arcade.makecode.com/).
-2. Seleccionar **Importar → Importar URL**.
-3. Ingresar la URL del repositorio: [CAST-GAMES---sr-1976](https://github.com/Cirux1911/CAST-GAMES---sr-1976).
-4. Abrir el proyecto y extraer los cambios de GitHub cuando corresponda.
-
----
-
-*Proyecto de Resoluciones Lógicas — CAST GAMES.*
-
-<!-- Metadatos de MakeCode: mantener para identificar el proyecto -->
 * for PXT/arcade
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+
+## Actualización del juego publicado
+
+**La rama principal es `master`.** La página utiliza un archivo compilado (`assets/js/binary.js`), no ejecuta `main.ts` directamente. Por eso un merge por sí solo no actualizaba el juego.
+
+Se agregó el workflow `.github/workflows/publicar-pages.yml` para compilar MakeCode Arcade y publicar el sitio cada vez que cambie `master`. **Configuración inicial obligatoria:** en GitHub abrir **Settings → Pages → Build and deployment → Source → GitHub Actions**. Sin ese ajuste, la publicación automática puede no funcionar.
+
+Después de fusionar un PR, abrir **Actions → Publicar juego en GitHub Pages** y comprobar que el build y el deploy finalicen correctamente. Si falla la compilación, leer el registro del trabajo antes de volver a publicar; no sustituir el archivo compilado por el código fuente.
+
+Si se trabaja desde MakeCode Arcade, también es posible usar su integración de GitHub y **Create release** para generar una publicación; el workflow de releases existente es independiente y no se ejecuta con cada merge.
+
+### Comprobación rápida
+
+1. Confirmar que el cambio aparece en `main.ts` de `master`.
+2. Confirmar que la acción **Publicar juego en GitHub Pages** terminó correctamente.
+3. Abrir [el juego](https://cirux1911.github.io/CAST-GAMES---sr-1976/) con Ctrl+F5.
+4. Si el juego no cambia, revisar la acción y comprobar la versión de `assets/js/binary.js` generada en el despliegue. No es necesario borrar ramas ni reescribir el historial.
+
+### Errores de jugabilidad pendientes de validar en MakeCode
+
+- `bala_de_jefe` está declarada como número, aunque `sprites.onOverlap` espera tipos de sprite.
+- El evento de impacto `Projectile` contra `Enemy` descuenta vida de `vida_jefe_final`, incluso antes de que exista el jefe. Separar las colisiones de soldados y jefe.
+- El evento de salud cero compara `status` con `Jefe_final` (un sprite) en lugar de `vida_jefe_final` (una barra) y no llama a `game.gameOver(true)`.
+- `Angulo` se genera en grados pero `Math.cos` y `Math.sin` usan radianes; convertir el ángulo antes de disparar.
+- La variable `protección` cambia de valor durante el contacto con enemigos, pero no se comprueba antes de reducir una vida.
+- El jefe recibe velocidad horizontal negativa cada 15 ms y no se coloca explícitamente en el mapa final; revisar su movimiento y aparición.
+- `main.blocks` y `main.ts` deben modificarse juntos desde MakeCode Arcade para evitar que el editor sobrescriba cambios.
+
+No se modificaron automáticamente estos comportamientos porque requieren probarlos en el simulador y conservar la correspondencia entre bloques y TypeScript.
