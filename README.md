@@ -44,7 +44,10 @@ Su misión es rescatar a las personas retenidas y enfrentar a los responsables.
 
 ### Cómo jugar
 
-1. Abrir el [juego publicado](https://cirux1911.github.io/CAST-GAMES---sr-1976/) y leer la introducción.
+1. Abrir el juego (importando link del repositorio) y leer la introducción.
+   
+   <img width="815" height="360" alt="image" src="https://github.com/user-attachments/assets/0a15fba4-d7e7-42a1-9b00-f6027a11cfca" />
+   
 2. Recorrer el primer nivel, evitando a los soldados o eliminándolos con los disparos.
 3. Acercarse a los secuestrados para rescatarlos y sumar puntos.
 4. Continuar por los siguientes niveles al alcanzar los puntajes necesarios.
