@@ -11,6 +11,10 @@ function crearSecuestradoIzq (columna: number, fila: number) {
     persona = sprites.create(assets.image`Secuestrado Izquierda`, SpriteKind.Secuestrado)
     tiles.placeOnTile(persona, tiles.getTileLocation(columna, fila))
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.BOSS, function (sprite, otherSprite) {
+    sprites.destroy(sprite)
+    vida_jefe_final.value += -1
+})
 function crearSecuestradoDer (Columna: number, Fila: number) {
     persona = sprites.create(assets.image`Secuestrado derecha`, SpriteKind.Secuestrado)
     tiles.placeOnTile(persona, tiles.getTileLocation(Columna, Fila))
@@ -64,10 +68,9 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
-    if (status == Jefe_final) {
-        sprites.destroy(Jefe_final)
-        game.setGameOverMessage(true, "GAME OVER!")
-    }
+    sprites.destroy(Jefe_final)
+    game.setGameOverMessage(true, "GAME OVER!")
+    game.gameOver(true)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     protección = 1
@@ -98,19 +101,24 @@ info.onScore(8, function () {
     game.showLongText("Finalmente Aldo sube a la terraza, donde un helicópeto le sorprende", DialogLayout.Bottom)
     pause(2000)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
-    tiles.placeOnTile(Aldo, tiles.getTileLocation(24, 6))
+    tiles.placeOnTile(Aldo, tiles.getTileLocation(14, 7))
     Jefe_final = sprites.create(assets.image`miImagen4`, SpriteKind.BOSS)
-    vida_jefe_final = statusbars.create(40, 5, StatusBarKind.Health)
+    tiles.placeOnTile(Jefe_final, tiles.getTileLocation(15, 23))
+    vida_jefe_final = statusbars.create(30, 5, StatusBarKind.Health)
+    vida_jefe_final.max = 10
+    vida_jefe_final.value = 10
+    vida_jefe_final.attachToSprite(Jefe_final)
+    Jefe_final.follow(Aldo, 30)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
     sprites.destroy(sprite)
 })
-let vida_jefe_final: StatusBarSprite = null
 let Jefe_final: Sprite = null
 let projectile: Sprite = null
 let Angulo = 0
 let militar: Sprite = null
+let vida_jefe_final: StatusBarSprite = null
 let persona: Sprite = null
 let protección = 0
 let recarga = 0
@@ -141,10 +149,5 @@ let secuestrado = 0
 game.onUpdateInterval(50, function () {
     if (recarga > 0) {
         recarga += -1
-    }
-})
-game.onUpdateInterval(15, function () {
-    if (info.score() >= 8) {
-        Jefe_final.setVelocity(-150, 0)
     }
 })
