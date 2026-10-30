@@ -2,10 +2,23 @@ namespace SpriteKind {
     export const Secuestrado = SpriteKind.create()
     export const Rescatado = SpriteKind.create()
     export const BOSS = SpriteKind.create()
+    export const BalaJefe = SpriteKind.create()
 }
-let bala_de_jefe = 0
-sprites.onOverlap(SpriteKind.Player, bala_de_jefe, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
+// Protege a Aldo durante 1,5 segundos después de un golpe
+function danarAldo () {
+    if (protección == 0) {
+        protección = 1
+        info.changeLifeBy(-1)
+        pause(1500)
+        protección = 0
+    }
+}
+sprites.onOverlap(SpriteKind.BOSS, SpriteKind.Player, function (sprite, otherSprite) {
+    danarAldo()
+})
+sprites.onOverlap(SpriteKind.BalaJefe, SpriteKind.Player, function (sprite, otherSprite) {
+    sprites.destroy(sprite)
+    danarAldo()
 })
 function crearSecuestradoIzq (columna: number, fila: number) {
     persona = sprites.create(assets.image`Secuestrado Izquierda`, SpriteKind.Secuestrado)
@@ -22,6 +35,8 @@ function crearSecuestradoDer (Columna: number, Fila: number) {
 info.onScore(4, function () {
     game.showLongText("Aldo logró rescatar a 4 personas... Pero sabía que habían más gente secuestrada en el edificio. Así que subió las escaleras al siguiente piso.", DialogLayout.Bottom)
     pause(2000)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Projectile)
     tiles.setCurrentTilemap(tilemap`NIVEL 2`)
     crearSecuestradoIzq(27, 17)
     crearSecuestradoIzq(28, 24)
@@ -68,15 +83,15 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
-    sprites.destroy(Jefe_final)
-    game.setGameOverMessage(true, "GAME OVER!")
-    game.gameOver(true)
+    if (status == vida_jefe_final) {
+        jefeActivo = 0
+        sprites.destroy(Jefe_final)
+        game.setGameOverMessage(true, "GANASTE")
+        game.gameOver(true)
+    }
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    protección = 1
-    info.changeLifeBy(-1)
-    pause(1500)
-    protección = 0
+    danarAldo()
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -98,8 +113,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Secuestrado, function (jugador, 
     info.changeScoreBy(1)
 })
 info.onScore(8, function () {
-    game.showLongText("Finalmente Aldo sube a la terraza, donde un helicópeto le sorprende", DialogLayout.Bottom)
+    game.showLongText("Finalmente Aldo sube a la terraza, donde se encuentra con el jefe final.", DialogLayout.Bottom)
     pause(2000)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Projectile)
     tiles.setCurrentTilemap(tilemap`NIVEL FINAL`)
     tiles.placeOnTile(Aldo, tiles.getTileLocation(14, 7))
     Jefe_final = sprites.create(assets.image`miImagen4`, SpriteKind.BOSS)
@@ -109,11 +126,14 @@ info.onScore(8, function () {
     vida_jefe_final.value = 10
     vida_jefe_final.attachToSprite(Jefe_final)
     Jefe_final.follow(Aldo, 30)
+    jefeActivo = 1
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
     sprites.destroy(sprite)
 })
+let jefeActivo = 0
+let bala_de_jefe: Sprite = null
 let Jefe_final: Sprite = null
 let projectile: Sprite = null
 let Angulo = 0
@@ -149,5 +169,19 @@ let secuestrado = 0
 game.onUpdateInterval(50, function () {
     if (recarga > 0) {
         recarga += -1
+    }
+})
+
+game.onUpdateInterval(1500, function () {
+    if (jefeActivo == 1 && Jefe_final != null) {
+        // La bala apunta hacia donde estaba Aldo cuando se disparó
+        bala_de_jefe = sprites.createProjectileFromSprite(
+            assets.image`Bala`,
+            Jefe_final,
+            (Aldo.x - Jefe_final.x) / 2,
+            (Aldo.y - Jefe_final.y) / 2
+        )
+        bala_de_jefe.setKind(SpriteKind.BalaJefe)
+        bala_de_jefe.lifespan = 4000
     }
 })
