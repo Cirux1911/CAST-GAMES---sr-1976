@@ -27,7 +27,7 @@ En 1976, en San Rafael, Mendoza, Aldo López Rodruigez, un joven de pelo largo a
 
 Su misión es rescatar a las personas retenidas y enfrentar a los responsables.
 
-**Final previsto en la historia:** tras rescatar a los ciudadanos, estos salen de la municipalidad, festejan y agradecen a Aldo.
+**Final:** tras rescatar a los ciudadanos, estos salen de la municipalidad, festejan y agradecen a Aldo.
 
 ## Objetivo y mecánicas
 
@@ -88,9 +88,7 @@ En algunas pruebas, las propuestas de código resultaron demasiado extensas y di
 
 ## Documento de planificación
 
-**Enlace al documento de Word compartido:** **PENDIENTE DE AGREGAR**.
-
-Este enlace debe conducir al documento de planificación del grupo y ser accesible para el docente.
+**Enlace al documento de Word compartido:** https://colegiodelcarmenedu-my.sharepoint.com/:w:/g/personal/nicolas_martinez_delcarmen_edu_ar/IQB8RPDzr5gETawqKOk0jpoJAbMFAGrrGXEW2GmaePi2xRU?e=r1H0z7 
 
 ## Abrir y editar el proyecto
 
@@ -98,8 +96,6 @@ Este enlace debe conducir al documento de planificación del grupo y ser accesib
 2. Seleccionar **Importar → Importar URL**.
 3. Ingresar la URL del repositorio: [CAST-GAMES---sr-1976](https://github.com/Cirux1911/CAST-GAMES---sr-1976).
 4. Abrir el proyecto y extraer los cambios de GitHub cuando corresponda.
-
-Para comprobar una actualización de la versión web, revisar **Actions → Publicar juego en GitHub Pages**. La publicación usa la rama principal master y el flujo de GitHub Actions configurado para el repositorio.
 
 ---
 
