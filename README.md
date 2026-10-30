@@ -1,10 +1,7 @@
 # SR 1976
 
 **Grupo:** CAST GAMES  
-**Herramienta:** Microsoft MakeCode Arcade  
-**Modalidad:** proyecto escolar grupal
-
-🎮 **[Jugar SR 1976](https://cirux1911.github.io/CAST-GAMES---sr-1976/)**
+**Herramienta:** MakeCode Arcade  
 
 ## Descripción del juego
 
@@ -42,8 +39,8 @@ Su misión es rescatar a las personas retenidas y enfrentar a los responsables.
 
 | Control | Acción |
 | --- | --- |
-| Flechas de dirección / cruceta | Mover a Aldo. |
-| Botón **B** del simulador o mando | Disparar. |
+| Flechas de dirección | Mover a Aldo. |
+| Botón **B** del simulador | Disparar. |
 
 ### Cómo jugar
 
