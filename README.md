@@ -80,11 +80,8 @@ En algunas pruebas, las propuestas de código resultaron demasiado extensas y di
 
 ## Créditos y recursos de terceros
 
-- **Música utilizada:** *Bloody Stream [8-Bit; VRC6]*, adaptación de *BLOODY STREAM*, tema de apertura de *JoJo's Bizarre Adventure* (OP 2).
-- **Autor del arreglo de 8 bits, enlace a la fuente y licencia o permiso de uso:** pendientes de identificar y completar.
+- **Música utilizada:** Sonidos y musica gratuitos de Makecode Arcade
 - **Gráficos, mapas y diseño de niveles:** CAST GAMES.
-
-> Incluir los datos del creador del arreglo y las condiciones de uso cuando se disponga de la fuente original. La atribución por sí sola no sustituye un permiso de uso cuando sea necesario.
 
 ## Documento de planificación
 
