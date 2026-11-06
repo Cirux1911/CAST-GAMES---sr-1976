@@ -20,7 +20,7 @@ Para editar este repositorio en MakeCode.
 * haz clic en **Importar** y luego haz clic en **Importar URL**
 * pega **https://github.com/cirux1911/CAST-GAMES---sr-1976** y haz clic en importar
 
-#### Metadatos (se utilizan para buscar y renderizar)
+#### Metadatos (se usan para buscar y renderizar)
 
 * for PXT/arcade
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
@@ -42,14 +42,4 @@ Si se trabaja desde MakeCode Arcade, también es posible usar su integración de
 3. Abrir [el juego](https://cirux1911.github.io/CAST-GAMES---sr-1976/) con Ctrl+F5.
 4. Si el juego no cambia, revisar la acción y comprobar la versión de `assets/js/binary.js` generada en el despliegue. No es necesario borrar ramas ni reescribir el historial.
 
-### Errores de jugabilidad pendientes de validar en MakeCode
-
-- `bala_de_jefe` está declarada como número, aunque `sprites.onOverlap` espera tipos de sprite.
-- El evento de impacto `Projectile` contra `Enemy` descuenta vida de `vida_jefe_final`, incluso antes de que exista el jefe. Separar las colisiones de soldados y jefe.
-- El evento de salud cero compara `status` con `Jefe_final` (un sprite) en lugar de `vida_jefe_final` (una barra) y no llama a `game.gameOver(true)`.
-- `Angulo` se genera en grados pero `Math.cos` y `Math.sin` usan radianes; convertir el ángulo antes de disparar.
-- La variable `protección` cambia de valor durante el contacto con enemigos, pero no se comprueba antes de reducir una vida.
-- El jefe recibe velocidad horizontal negativa cada 15 ms y no se coloca explícitamente en el mapa final; revisar su movimiento y aparición.
-- `main.blocks` y `main.ts` deben modificarse juntos desde MakeCode Arcade para evitar que el editor sobrescriba cambios.
-
-No se modificaron automáticamente estos comportamientos porque requieren probarlos en el simulador y conservar la correspondencia entre bloques y TypeScript.
+Documento de planificación: https://colegiodelcarmenedu-my.sharepoint.com/:w:/g/personal/nicolas_martinez_delcarmen_edu_ar/IQB8RPDzr5gETawqKOk0jpoJAbMFAGrrGXEW2GmaePi2xRU?e=8Oc8MY 
